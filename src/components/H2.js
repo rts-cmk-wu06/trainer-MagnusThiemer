@@ -1,6 +1,6 @@
 const H2 = ({text}) => {
   return ( 
-    <h2 className="m-6 text-xl">{text}</h2>
+    <h2 className="text-xl">{text}</h2>
    );
 }
  

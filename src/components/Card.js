@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Card = ({data}) => {
   return ( 
-    <Link to={`/classdetails:${data.id}`} className=" flex h-48 w-40 mr-3 rounded-t-2xl rounded-bl-2xl overflow-hidden" style={{
+    <Link to={`/classdetails/${data.id}`} className=" flex h-48 w-40 mr-3 rounded-t-2xl rounded-bl-2xl overflow-hidden" style={{
       backgroundImage: `url(${data.asset.url})`,
       backgroundSize: 'cover'
     }}>

@@ -1,5 +1,10 @@
+import Navbar from "../templates/Navbar";
+
 const ClassDetails = () => {
-  return ( <div></div> );
+  return ( 
+  <>
+    <Navbar />
+  </> );
 }
  
 export default ClassDetails;
