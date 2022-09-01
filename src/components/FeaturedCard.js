@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { AiFillStar } from "react-icons/ai";
 
 const FeaturedCard = ({data}) => {
-  console.log(data.asset.url)
     return ( 
     <Link to={`/classdetails:${data.id}`} className="m-6">
       <div style={{
