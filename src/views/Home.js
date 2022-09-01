@@ -1,6 +1,8 @@
+import PopularClasses from "../templates/PopularClasses";
+
 const Home = () => {
   return ( 
-    <div></div>
+    <PopularClasses />
    );
 }
  
