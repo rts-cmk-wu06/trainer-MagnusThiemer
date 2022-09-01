@@ -1,8 +1,8 @@
+import WelcomeSection from "../templates/WelcomeSection";
+
 const WelcomeView = () => {
   return ( 
-    <div>
-      
-    </div>
+      <WelcomeSection />
    );
 }
  

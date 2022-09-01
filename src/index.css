@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.header-h2-white::before {
+  content:" ";
+  display: block;
+  height: 2px;
+  width: 1.8rem;
+  position: absolute;
+  top: 50%;
+  left: -2.5rem;
+  background: white;
+}
