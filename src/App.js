@@ -12,7 +12,7 @@ function App() {
     <>
       <Routes location={location} key={location.key}>
         <Route path='/home' element={<Home />}/>
-        <Route path='/classdetails:id' element={<ClassDetails />}/>
+        <Route path='/classdetails/:id' element={<ClassDetails />}/>
         <Route path='/schedule' element={<Schedule />}/>
         <Route path='/search' element={<SearchView />}/>
         <Route path='/signin' element={<SignInView />}/>
