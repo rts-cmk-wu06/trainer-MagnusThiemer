@@ -1,7 +1,4 @@
-
-
 const TrainerCard = ({data}) => {
-  console.log(data)
   return ( 
     
     <div className="flex">
