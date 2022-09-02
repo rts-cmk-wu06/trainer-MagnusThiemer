@@ -16,3 +16,13 @@ body {
   left: -2.5rem;
   background: white;
 }
+.header-h2-black::before {
+  content:" ";
+  display: block;
+  height: 2px;
+  width: 1.8rem;
+  position: absolute;
+  top: 50%;
+  left: -2.5rem;
+  background: black;
+}
