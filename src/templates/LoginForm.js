@@ -2,12 +2,11 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
 import Button from "../components/Button";
 import H3 from "../components/H3";
+import { useContext } from 'react';
 import { StateContext } from '../context/Context';
 import { useState } from 'react';
-/* username: yup.string().required('Please enter email').email('Please enter a valid email').matches(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$/, 'Please enter a valid email'), */
 
 const LoginForm = () => {
   const { userData, setUserData } = useContext(StateContext);
