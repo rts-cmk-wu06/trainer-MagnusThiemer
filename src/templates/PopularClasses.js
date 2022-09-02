@@ -19,7 +19,9 @@ const PopularClasses = () => {
   return ( 
     <section className="">
       {classes && <FeaturedCard data={classes[getRandomClass()]}/>}
-      <H3 text='Classes for you'/>
+      <div className="mb-4 ml-6">
+        <H3 text='Classes for you'/>
+      </div>
       {classes && <CardCarousel data={classes} />}
     </section>
    );
