@@ -9,7 +9,7 @@ import { StateContext } from '../context/Context';
 import { useState } from 'react';
 
 const LoginForm = () => {
-  const { userData, setUserData } = useContext(StateContext);
+  const { userData, setUserData, userToken, setUserToken } = useContext(StateContext);
   const schema = yup.object({
     username: yup.string().required('Please enter email'),
     password: yup.string().required('Please enter password')
@@ -32,7 +32,7 @@ const onSubmit = () => {
   .then(response => response.json())
   .then(data => {
     if(data.token){
-      setUserData(data)
+      setUserToken(data)
       navigate('/home')
     } else {
       setLoginError('Invalid email or password')
@@ -42,9 +42,9 @@ const onSubmit = () => {
 }
 
   return ( 
-    <div className="mt-16">
+    <div className="mt-16 p-6">
       <H3 text='Log in with your credentials'/>
-      <form action="POST" onSubmit={handleSubmit(onSubmit)} className="flex p-6 flex-col" id='loginForm'>
+      <form action="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-6" id='loginForm'>
         <input 
           {...register('username')}
           type="text"

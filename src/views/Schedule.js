@@ -1,5 +1,13 @@
+import Navbar from "../templates/Navbar";
+import ScheduleSection from "../templates/ScheduleSection";
+
 const Schedule = () => {
-  return ( <div></div> );
+  return ( 
+  <>
+    <Navbar />
+    <ScheduleSection />
+  </> 
+  );
 }
  
 export default Schedule;

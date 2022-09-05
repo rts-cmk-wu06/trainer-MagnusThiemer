@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 const NavMenu = ({setToggle}) => {
   const navigate = useNavigate()
-  const { userData, setUserData } = useContext(StateContext);
+  const { userToken, setUserToken, setUserData } = useContext(StateContext);
   const logOut = () => {
-    setUserData(false);
+    setUserToken(false);
+    setUserData(false)
     navigate('/home')
   }
   return ( 
@@ -19,9 +20,9 @@ const NavMenu = ({setToggle}) => {
       <ul className="text-center">
         <NavMenuItem destination='/home' text='Home'/>
         <NavMenuItem destination='/search' text='Search'/>
-        <NavMenuItem destination='/schedule' text='My Schedule'/>
-        {!userData && <NavMenuItem destination='/signin' text='Sign In'/>}
-        {userData && <NavMenuItem destination='/home' onClick={logOut} text='Log out' />}
+        {userToken && <NavMenuItem destination='/schedule' text='My Schedule'/>}
+        {!userToken && <NavMenuItem destination='/signin' text='Sign In'/>}
+        {userToken && <NavMenuItem destination='/home' onClick={logOut} text='Log out' />}
       </ul>
     </div>
    );
