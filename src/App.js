@@ -5,8 +5,23 @@ import Schedule from "./views/Schedule";
 import SearchView from "./views/SearchView";
 import SignInView from "./views/SignInView";
 import WelcomeView from "./views/WelcomeView";
+import { useContext } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios'
+import { StateContext } from './context/Context';
 
 function App() {
+  const { userToken, userData, setUserData } = useContext(StateContext)
+  const config = {
+    headers: { Authorization: `Bearer ${userToken.token}` }
+  };
+  useEffect(() => {
+    if(userToken){
+      axios.get(`http://localhost:4000/api/v1/users/${userToken.userId}`, config)
+      .then(response => setUserData(response.data))
+    }
+  }, [userToken])
+
   const location = useLocation()
   return (
     <>
