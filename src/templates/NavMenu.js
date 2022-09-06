@@ -5,6 +5,8 @@ import { StateContext } from '../context/Context';
 import { useNavigate } from 'react-router-dom';
 
 const NavMenu = ({setToggle}) => {
+  console.log(window.document.body.offsetHeight)
+  let height = `h-[${window.innerHeight}px]`
   const navigate = useNavigate()
   const { userToken, setUserToken, setUserData } = useContext(StateContext);
   const logOut = () => {
@@ -13,7 +15,7 @@ const NavMenu = ({setToggle}) => {
     navigate('/home')
   }
   return ( 
-    <div className="w-full h-screen absolute top-0 bg-white">
+    <div className={`w-full h-full absolute top-0 bg-white z-20`}>
       <div className="flex justify-end px-6 pt-6 pb-12 ">
         <button onClick={() => setToggle(false)}><GrFormClose className="text-3xl text-secondary" /></button>
       </div>
