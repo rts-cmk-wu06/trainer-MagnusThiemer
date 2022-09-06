@@ -17,11 +17,11 @@ const PopularClasses = () => {
 
   return ( 
     <section className="">
-      {classes && <FeaturedCard data={classes[getRandomClass()]}/>}
+      <FeaturedCard data={classes && classes[getRandomClass()]}/>
       <div className="mb-4 ml-6">
         <H3 text='Classes for you'/>
       </div>
-      {classes && <CardCarousel data={classes} />}
+      <CardCarousel data={classes && classes} />
     </section>
    );
 }
