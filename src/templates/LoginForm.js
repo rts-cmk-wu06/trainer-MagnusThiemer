@@ -12,7 +12,7 @@ import axios from 'axios';
 const LoginForm = () => {
   const { setUserToken } = useContext(StateContext);
   const schema = yup.object({
-    username: yup.string().required('Please enter email'),
+    username: yup.string().required('Please enter username'),
     password: yup.string().required('Please enter password')
   }).required()
 
@@ -43,11 +43,13 @@ const onSubmit = () => {
     <div className="mt-16 p-6">
       <H3 text='Log in with your credentials'/>
       <form action="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-6" id='loginForm'>
+        {errors.username && <p>{errors.username.message}</p>}
         <input 
           {...register('username')}
           type="text"
           className="border-tertiary border py-5 px-10 rounded-full mb-4"
-          placeholder='Enter your email...'/>
+          placeholder='Enter your username...'/>
+        {errors.password && <p>{errors.password.message}</p>}
         <input 
           {...register('password')}
           type="password"
