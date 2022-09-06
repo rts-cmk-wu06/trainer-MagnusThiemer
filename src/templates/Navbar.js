@@ -1,4 +1,4 @@
-import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import H2 from "../components/H2";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md"
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
@@ -17,11 +17,11 @@ const Navbar = () => {
     <>
       <nav className="flex justify-between p-6">
         <div className="flex">
-          {location.pathname !== '/home' && <button onClick={() => navigate(-1)}><MdOutlineKeyboardArrowLeft className="text-3xl text-secondary"/></button>}
+          {location.pathname !== '/home' && <button onClick={() => navigate(-1)}><MdOutlineKeyboardArrowLeft className={`text-3xl ${location.pathname.includes('/classdetails') ? 'text-white' : 'text-black'}`}/></button>}
           <H2 text={pageName}/>
         </div>
         <button onClick={() => setToggle(true)}>
-          <HiOutlineMenuAlt3 className="text-2xl"/>
+          <HiOutlineMenuAlt3 className={`text-2xl ${location.pathname.includes('/classdetails') ? 'text-white' : 'text-black'}`}/>
         </button>
       </nav>
       {toggle && <NavMenu setToggle={setToggle}/>}

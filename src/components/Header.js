@@ -1,5 +1,4 @@
 const Header = (props) => {
-  let text = `text-${props.secondaryColor}`
   let headerClass = `header-h2-${props.secondaryColor}` 
 
   return ( 

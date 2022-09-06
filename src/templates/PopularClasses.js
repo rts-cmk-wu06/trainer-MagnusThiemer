@@ -7,7 +7,6 @@ import CardCarousel from "./CardCarousel";
 
 const PopularClasses = () => {
 
-
   const [classes, setClasses] = useState();
   const getRandomClass = () => Math.floor(Math.random() * classes.length)
 
