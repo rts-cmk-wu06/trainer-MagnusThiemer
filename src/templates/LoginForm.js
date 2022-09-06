@@ -8,8 +8,10 @@ import { useContext } from 'react';
 import { StateContext } from '../context/Context';
 import { useState } from 'react';
 import axios from 'axios';
+import Spinner from '../components/Spinner';
 
 const LoginForm = () => {
+  const [loading, setIsLoading] = useState(false)
   const { setUserToken } = useContext(StateContext);
   const schema = yup.object({
     username: yup.string().required('Please enter username'),
@@ -26,6 +28,7 @@ const config = {
 };
 
 const onSubmit = () => {
+  setIsLoading(true)
   setLoginError(false)
   let loginForm = document.getElementById("loginForm");
   let formData = new FormData(loginForm);
@@ -36,13 +39,17 @@ const onSubmit = () => {
       setUserToken(response.data)
       navigate('/home')
     }})
-  .catch(() => setLoginError('Invalid user or password'))
+  .catch(() => {
+    setLoginError('Invalid user or password')
+    setIsLoading(false)
+  })
 }
 
   return ( 
     <div className="mt-16 p-6">
       <H3 text='Log in with your credentials'/>
-      <form action="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-6" id='loginForm'>
+      <form action="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-6 relative" id='loginForm'>
+        {loading && <div className='absolute flex w-full top-12 justify-center items-center'><Spinner /></div>}
         {errors.username && <p>{errors.username.message}</p>}
         <input 
           {...register('username')}
