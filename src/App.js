@@ -11,7 +11,7 @@ import axios from 'axios'
 import { StateContext } from './context/Context';
 
 function App() {
-  const { userToken, userData, setUserData } = useContext(StateContext)
+  const { userToken, setUserData } = useContext(StateContext)
   const config = {
     headers: { Authorization: `Bearer ${userToken.token}` }
   };

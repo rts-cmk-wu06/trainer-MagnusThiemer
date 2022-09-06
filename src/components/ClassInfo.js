@@ -2,7 +2,6 @@ import TrainerCard from "./TrainerCard";
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import H3 from "./H3";
-import Button from "./Button";
 import { useContext } from "react";
 import { StateContext } from "../context/Context";
 

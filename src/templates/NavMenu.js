@@ -5,8 +5,6 @@ import { StateContext } from '../context/Context';
 import { useNavigate } from 'react-router-dom';
 
 const NavMenu = ({setToggle}) => {
-  console.log(window.document.body.offsetHeight)
-  let height = `h-[${window.innerHeight}px]`
   const navigate = useNavigate()
   const { userToken, setUserToken, setUserData } = useContext(StateContext);
   const logOut = () => {
