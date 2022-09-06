@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import FeaturedCard from "../components/FeaturedCard";
 import H3 from "../components/H3";
-import Spinner from "../components/Spinner";
 import CardCarousel from "./CardCarousel";
 
 const PopularClasses = () => {
