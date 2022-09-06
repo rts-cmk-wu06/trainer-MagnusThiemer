@@ -56,7 +56,7 @@ const ClassInfo = ({data}) => {
       {trainerData && <TrainerCard data={trainerData}/>}
       {userToken && 
         <>
-          {(!isSignedUp && !isRepeatDay) && <button className="bg-primary py-5 px-10 rounded-full text-center uppercase font-bold" onClick={() => signUp()}>{`Sign up (${data.users.length}/${data.maxParticipants})`}</button>}
+          {(!isSignedUp && !isRepeatDay) && <button disabled={data.users.length === data.maxParticipants} className="bg-primary py-5 px-10 rounded-full text-center uppercase font-bold" onClick={() => signUp()}>{`Sign up (${data.users.length}/${data.maxParticipants})`}</button>}
           {(isSignedUp) && <button className="bg-primary py-5 px-10 rounded-full text-center uppercase font-bold" onClick={() => leave()}>Leave class</button>}
           {(isRepeatDay && !isSignedUp) && <button disabled className="bg-primary py-5 px-10 rounded-full text-center uppercase font-bold">You already have a class on {data.classDay}</button>}
         </>
